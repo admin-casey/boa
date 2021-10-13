@@ -88,7 +88,7 @@ h1, p, a{
     color: black;
 }
 
-h1, a{
+h1{
     text-transform: uppercase;
 }
 
@@ -109,7 +109,13 @@ p, a{
     line-height: 1.5;
     font-family: 'Lora', Times, serif;
 }
-
+a{
+    color: white;
+}
+a:hover{
+    color: #E71A2D;
+    transition-duration: 500ms;
+}
 p{
     padding-bottom: 5%;
     font-weight: 300;
