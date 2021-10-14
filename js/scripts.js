@@ -41,7 +41,6 @@ function toggleVideoClosed() {
 // /VIDEO PAGE
 
 // FAQ
-
 const faqPage = gsap.timeline({
     paused: "true"
 })
@@ -82,5 +81,15 @@ function toggleFaqOpen() {
 function toggleFaqClosed() {
     faqPage.reverse()
 }
-
 // /FAQ
+
+// NFT
+var player = new Vimeo.Player(document.querySelector('iframe'));
+
+document.getElementById('play-vid').addEventListener('click', function() {
+  player.play();
+});
+document.getElementById('close-button').addEventListener('click', function() {
+  player.pause();
+});
+// /NFT
