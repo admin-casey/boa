@@ -60,25 +60,26 @@ faqPage.to('#faq-page', {
     ease: 'power4.inOut',
     zIndex: 2,
 }, 0.0)
+faqPage.to('#faq-page .faq-link-wrapper, #faq-page .link-light', {
+    duration: 1,
+    y: 0,
+    ease: 'power4.inOut',
+    stagger: 0.1
+})
 faqPage.to('#faq-page .line', {
     duration: 1,
     x: 0,
     y: 0,
     ease: 'power4.inOut',
     stagger: 0.1,
-})
+}, 0.5)
 faqPage.to('#faq-page h2, #faq-page p', {
     duration: 1,
     y: 0,
     ease: 'power4.inOut',
     stagger: 0.1,
 }, 1)
-faqPage.to('#faq-page .faq-link-wrapper, #faq-page .link-light', {
-    duration: 0.5,
-    y: 0,
-    ease: 'power4.inOut',
-    stagger: 0.1
-}, 0.0)
+
 
 function toggleFaqOpen() {
     faqPage.play();

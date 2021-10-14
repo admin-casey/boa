@@ -126,7 +126,13 @@ p{
 .links{
     padding-top: 5%;
 }
-.faq-link-wrapper,
+.faq-link-wrapper{
+    padding: 2%;
+    width: 10vw;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
 .link-wrapper{
     padding: 2%;
     width: 10vw;
@@ -179,7 +185,6 @@ p{
     justify-content: center;
     padding: 0 23%;
 }
-
 /* /LANDING PAGE */
 
 /* VIDEO PAGE */
