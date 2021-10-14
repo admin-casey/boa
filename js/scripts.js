@@ -23,13 +23,19 @@ videoPage.to("#video-page", {
     ease: Power4.inOut,
     zIndex: 3,
 })
+videoPage.to("#video-shadow", {
+    duration: 1,
+    boxShadow: '0px 0px 8px 2px rgba(0,0,0,0.5)',
+    y: 0,
+}, 1.25)
 videoPage.to("#video-wrapper, #video, .credit", {
-    duration: 0.8,
+    duration: 1,
     y: 0,
     ease: Power4.inOut,
     zIndex: 3,
     stagger: 0.2,
-})
+}, 0.2)
+
 
 function toggleVideoOpen() {
     videoPage.play();
@@ -45,7 +51,7 @@ const faqPage = gsap.timeline({
     paused: "true"
 })
 faqPage.to('#faq-page', {
-    duration: 0.1,
+    duration: 1,
     scrollTo: "#faq-top",
 })
 faqPage.to('#faq-page', {
@@ -53,26 +59,26 @@ faqPage.to('#faq-page', {
     y: 0,
     ease: 'power4.inOut',
     zIndex: 2,
-})
+}, 0.0)
 faqPage.to('#faq-page .line', {
-    duration: 0.75,
+    duration: 1,
     x: 0,
     y: 0,
     ease: 'power4.inOut',
     stagger: 0.1,
 })
 faqPage.to('#faq-page h2, #faq-page p', {
-    duration: 0.75,
+    duration: 1,
     y: 0,
     ease: 'power4.inOut',
     stagger: 0.1,
-})
-faqPage.to('#faq-page .link-wrapper, #faq-page .link-light', {
+}, 1)
+faqPage.to('#faq-page .faq-link-wrapper, #faq-page .link-light', {
     duration: 0.5,
     y: 0,
     ease: 'power4.inOut',
     stagger: 0.1
-})
+}, 0.0)
 
 function toggleFaqOpen() {
     faqPage.play();

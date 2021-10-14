@@ -124,8 +124,9 @@ p{
 
 /* LINKS AND BUTTONS */
 .links{
-    padding: 0 22%;
+    padding-top: 5%;
 }
+.faq-link-wrapper,
 .link-wrapper{
     padding: 2%;
     width: 10vw;
@@ -134,8 +135,8 @@ p{
     text-align: center;
     cursor: pointer;
 }
-.border-white{
-    border: 1px solid white;
+.link-light{
+    color: white;
 }
 .link-wrapper:hover{
     background-color: #012169;
@@ -143,14 +144,24 @@ p{
     transition-duration: 500ms;
     transform: scale(1.2);
 }
+.faq-link-wrapper:hover{
+    background-color: white;
+    color: #012169;
+    transition-duration: 500ms;
+    transform: scale(1.2);
+}
+.border-white{
+    border: 1px solid white;
+}
 .link, .link-light{
     font-size: 1vw;
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
 }
-.link-light{
-    color: white;
+.link-light:hover{
+    color: #012169;
+    transition-duration: 500ms;
 }
 .link:hover{
     color: white;
@@ -175,20 +186,26 @@ p{
 #video-page{
     height: 100vh;
     width: 100%;
+    margin: 0 auto;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
     justify-content: center;
+    align-items: center;
     background-color: white;
     -webkit-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
 }
+
+#video-wrapper{
+    height: 48vw;
+    width: 48vw;
+    margin-right: -1px;
+}
 #close-button-wrapper{
     justify-content: end;
-    /* padding: 3% 2%; */
-    /* width: 100%; */
 }
 #close-button{
     position: absolute;
@@ -199,18 +216,12 @@ p{
     float: right;
     cursor: pointer;
 }
-#video-wrapper{
-    margin: 0 auto;
-    height: 50vh;
-    width: 50vh;
-    padding: 1%;
-    background-color: white;
-}
 /* .box-shadow{
-    -webkit-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.25);
     width: 50vh;
+    margin: 0 auto;
 } */
 #credits-wrapper{
     margin-top: 5vh;
@@ -275,3 +286,64 @@ p{
 #home-button{
     margin-top: 10%;
 }
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 480px) {}
+
+@media only screen and (max-width: 768px) {
+    /* ANIMATION UTILITIES */
+    .g-down-up {
+        transform: translateY(350%);
+    }
+    /* /ANIMATION UTILITIES */
+    /* HOME PAGE */
+    h1{
+        font-size: 8vw;
+    }
+    p{
+        font-size: 3.5vw;
+    }
+    #home-page{
+        padding: 10%;
+    }
+    .links{
+        padding-top: 10%;
+    }
+    .link-wrapper{
+        width: 50vw;
+        margin-bottom: 3%;
+    }
+    .link{
+        font-size: 4vw;
+    }
+    /* HOME PAGE */
+    /* VIDEO PAGE */
+    #video-wrapper{
+        height: 80vw;
+        width: 80vw;
+    }
+    .credit,
+    #close-button{
+        font-size: 5vw;
+    }
+    /* /VIDEO PAGE */
+    /* FAQ */
+    /* #faq-page{
+        padding: 10% 0;
+    } */
+    h2{
+        font-size: 6vw;
+        line-height: 1.2;
+    }
+    .link-light{
+        font-size: 4vw;
+    } 
+    #logo-wrapper img{
+        width: 50vw;
+    }
+    /* /FAQ */
+}
+
+@media only screen and (max-width: 1140px) {}
+/* MEDIA QUERIES */
