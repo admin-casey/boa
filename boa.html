@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>BoA | Earth Anew</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
+    <link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+</head>
+
+<style>
+/* CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* /CSS RESET */
+
+/* FLEXBOX */
+.flex{
+    display: flex;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;    
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;    
+}
+.space-between{
+    justify-content: space-between;
+}
+/* FLEXBOX */
+
+/* ANIMATION UTILITIES */
+.overflow-hidden {
+    overflow: hidden;
+}
+.g-down-up {
+    transform: translateY(250%);
+}
+
+.g-up-down {
+    transform: translateY(-100%);
+}
+
+.g-left-right {
+    transform: translateX(-100%);
+}
+
+.g-right-left {
+    transform: translateX(100%);
+}
+/* /ANIMATION UTILITIES */
+
+/* TYPOGRAPHY */
+h1, p, a{
+    text-align: center;
+    color: black;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+h1{
+    font-size: 4vw;
+    font-weight: bold;
+    padding-bottom: 3%;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5vw;
+}
+h2{
+    font-size: 2vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+p, a{
+    font-size: 1.33vw;
+    line-height: 1.5;
+    font-family: 'Lora', Times, serif;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: #E71A2D;
+    transition-duration: 500ms;
+}
+p{
+    padding-bottom: 5%;
+    font-weight: 300;
+}
+/* /TYPOGRAPHY */
+
+/* LINKS AND BUTTONS */
+.links{
+    padding: 0 22%;
+}
+.link-wrapper{
+    padding: 2%;
+    width: 10vw;
+    margin: 0 auto;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+}
+.border-white{
+    border: 1px solid white;
+}
+.link-wrapper:hover{
+    background-color: #012169;
+    color: white;
+    transition-duration: 500ms;
+    transform: scale(1.2);
+}
+.link, .link-light{
+    font-size: 1vw;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+.link-light{
+    color: white;
+}
+.link:hover{
+    color: white;
+    text-decoration: none;
+}
+#earth-anew-button{
+    margin-bottom: 2%;
+}
+/* /LINKS AND BUTTONS */
+
+/* LANDING PAGE */
+#home-page{
+    background-color: rgb(228, 228, 228);
+    height: 100vh;
+    justify-content: center;
+    padding: 0 26%;
+}
+
+/* /LANDING PAGE */
+
+/* VIDEO PAGE */
+#video-page{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    -webkit-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+}
+#close-button-wrapper{
+    justify-content: end;
+    /* padding: 3% 2%; */
+    /* width: 100%; */
+}
+#close-button{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 2vw;
+    text-align: right;
+    float: right;
+    cursor: pointer;
+}
+#video-wrapper{
+    margin: 0 auto;
+    height: 50vh;
+    width: 50vh;
+    padding: 1%;
+    background-color: white;
+}
+/* .box-shadow{
+    -webkit-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    width: 50vh;
+} */
+#credits-wrapper{
+    margin-top: 5vh;
+}
+.credit{
+    text-align: center;
+    line-height: 1.3;
+    font-size: 1.25vw;
+    font-family: 'Lora', Times, serif;
+}
+/* /VIDEO PAGE */
+
+
+/* FAQ */
+#faq-page{
+    height: 100%;
+    width: 80%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow-y: scroll;
+    padding: 0 10%;
+    z-index: 3;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    -webkit-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 51px 8px rgba(0,0,0,0.75);
+    background-color: #012169;
+}
+#faq-wrapper{
+    height: 100%;
+}
+#question, #answer{
+    text-align: left;
+    color: white;
+}
+#question{
+    font-weight: bold;
+    text-transform: none;
+    margin-top: 5%;
+}
+.line{
+    border: 1px solid white;
+    width: 15vw;
+    margin: 3% 0;
+}
+.white-border{
+    border: 1px solid white;
+}
+.white-color{
+    color: white;
+}
+#logo-wrapper{
+    width: 100%;
+    padding: 10% 0 5%;
+    justify-content: center;
+}
+#logo-wrapper img{
+    width: 20vw;
+}
+#home-button{
+    margin-top: 10%;
+}
+</style>
+
+<body>
+    <!-- HOME PAGE -->
+    <section id="home-page" class="flex-column space-between">
+        <div id="content-wrapper" >
+        <div class="overflow-hidden">
+            <h1 class="g-down-up">Earth Anew</h1>
+        </div>
+        <div class="overflow-hidden">
+            <p class="g-down-up">
+                Bank of America commissioned brand agency Superunion and 3D artist João
+                Seabra to create its first-ever, limited-edition NFT. Built on PALM, a
+                sustainable and energy-efficient ecosystem, this unique digital rendering of
+                a rainforest reflects our commitment to helping preserve the planet we share.
+            </p>
+        </div>
+        <div class="overflow-hidden">
+            <p class="g-down-up">
+                João Seabra is a Portugal-based artist, professor, and digital creative director. He
+                received a rare distinction as Young Creative Talent by the European Union in Brussels.
+            </p>
+        </div>
+        <div class="flex-column links overflow-hidden">
+            <div id="earth-anew-button"  class="link-wrapper overflow-hidden g-down-up" onclick="toggleVideoOpen()">
+                <div id="play-vid" class="link g-down-up">Earth Anew</div>
+            </div>
+            <div class="link-wrapper overflow-hidden g-down-up" onclick="toggleFaqOpen()">
+                <div class="link g-down-up">FAQ</div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- /HOME PAGE -->
+
+    <!-- VIDEO PAGE -->
+    <section id="video-page" class="g-down-up flex-column space-between">
+        <div id="close-button-wrapper">
+            <span id="close-button" onclick="toggleVideoClosed()">X</span>
+        </div>
+        <div id="video-content">
+            <div class="overflow-hidden">
+                <div id="video-wrapper" class="g-down-up">
+                    <div id="video" class="g-down-up" style="padding:100% 0 0 0;position:relative;">
+                        <iframe id="nft"
+                            src="https://player.vimeo.com/video/631357348?h=1d910f29d1&amp;badge=0&amp;controls=0&amp;background=1&amp;autoplay=0&amp;muted=0&amp;autopause=0&amp;loop=1&amp;api=1&amp;player_id=0&amp;app_id=58479" 
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture" 
+                            allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BofA_NFT_2021_NoLogo-1080">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="credits-wrapper" class="flex-column">
+                <div id="credits" class="overflow-hidden">
+                    <div class="g-down-up credit">Earth Anew</div>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="g-down-up credit">Artist: João Seabra</div>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="g-down-up credit">2021</div>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="g-down-up credit">Collection: Bank of America</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /VIDEO PAGE -->
+
+    <!-- FAQ -->
+    <section id="faq-page" class="flex-column space-between g-down-up">
+        <div id="faq-top"></div>
+        <div id="faq-wrapper" >
+            <!-- QUESTION 1 -->
+            <div class="overflow-hidden">
+                <h2 id="question" class="g-down-up">Why did I receive this NFT?</h2>
+            </div>
+            <div class="overflow-hidden">
+                <div class="line g-left-right"></div>
+            </div>
+            <div class="overflow-hidden">
+                <p id="answer" class="g-down-up">
+                    This NFT is being distributed to select clients of Bank of America in recognition of your participation in the 2021 SIBOS Conference.
+                </p>
+            </div>
+
+            <!-- QUESTION 2 -->
+            <div class="overflow-hidden">
+                <h2 id="question" class="g-down-up">What is a NFT?</h2>
+            </div>
+            <div class="overflow-hidden">
+                <div class="line g-left-right"></div>
+            </div>
+            <div class="overflow-hidden">
+                <p id="answer" class="g-down-up">
+                    NFT stands for non-fungible token. It is a unit of data stored on a digital ledger, called a blockchain, that certifies a digital asset to be unique.
+                </p>
+            </div>
+
+            <!-- QUESTION 3 -->
+            <div class="overflow-hidden">
+                <h2 id="question" class="g-down-up">What is a blockchain?</h2>
+            </div>
+            <div class="overflow-hidden">
+                <div class="line g-left-right"></div>
+            </div>
+            <div class="overflow-hidden">
+                <p id="answer" class="g-down-up">
+                    A blockchain is a type of distributed ledger technology. It is described as an incorruptible digital ledger of economic transactions that can be programmed to record not just financial transactions but virtually anything of value. In simple terms, transactions are organized into a series of blocks that are linked together and cannot be changed, which is the blockchain. A new block is created once verified. It means that a new pool of encrypted transactions have been added to the blockchain.
+                </p>
+            </div>
+
+            <!-- QUESTION 4 -->
+            <div class="overflow-hidden">
+                <h2 id="question" class="g-down-up">What is Palm?</h2>
+            </div>
+            <div class="overflow-hidden">
+                <div class="line g-left-right"></div>
+            </div>
+            <div class="overflow-hidden">
+                <p id="answer" class="g-down-up">
+                    The Palm blockchain is a new token-powered ecosystem for NFTs, which is connected to Ethereum, and features low gas costs, fast transaction finality, and 99.9% more energy efficiency than proof of work systems such as Bitcoin and Ethereum. Palm is a type of blockchain known as a sidechain. This is because it can connect to and interact with the Ethereum blockchain. Read more about Palm <a href="https://palm.io" target=”_blank”>here</a>.
+                </p>
+            </div> 
+
+            <!-- QUESTION 5 -->
+            <div class="overflow-hidden">
+                <h2 id="question" class="g-down-up">What is the environmental impact of the NFT?</h2>
+            </div>
+            <div class="overflow-hidden">
+                <div class="line g-left-right"></div>
+            </div>
+            <div class="overflow-hidden">
+                <p id="answer" class="g-down-up">
+                    The environmental impact of NFTs was one of the major reasons we decided to use the Palm blockchain instead of Ethereum. Palm is one of the most energy efficient blockchains available.
+                </p>
+            </div>
+
+            <!-- QUESTION 6 -->
+            <div class="overflow-hidden">
+                <h2 id="question" class="g-down-up">Where is this NFT stored?</h2>
+            </div>
+            <div class="overflow-hidden">
+                <div class="line g-left-right"></div>
+            </div>
+            <div class="overflow-hidden">
+                <p id="answer" class="g-down-up">
+                    Your NFT is securely stored in a "custodial vault". Think of it as a digital account used to store your NFT and tokens on the blockchain. Since it's a custodial vault, we create and manage it for you. In the coming weeks, we will allow access to the NFT directly by creating an account and connecting a digital wallet.
+                </p>
+            </div>
+
+            <div class="flex-row links overflow-hidden">
+                <div class="link-wrapper border-white overflow-hidden g-down-up" onclick="toggleFaqClosed()">
+                    <div class="link-light g-down-up">Home</div>
+                </div>
+            </div>
+
+            <div id="logo-wrapper" class="overflow-hidden flex">
+                <img src="/assets/boa-logo.png" alt="">
+            </div>
+
+        </div>
+    </section>
+    <!-- /FAQ -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js" integrity="sha512-eI+25yMAnyrpomQoYCqvHBmY4dLfqKWPnD4j8y0E3Js+yqpF26xncL4t81M1zxC+ISYfRoCN52rN/n0q2UIBZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+// LANDING PAGE
+function landingPageEntranceAnim(){
+    const tl = gsap.timeline({})
+    tl
+    .to('#home-page h1, #home-page p, #home-page .links .link, .link-wrapper', {
+        duration: 2,
+        y: 0,
+        ease: 'power4.inOut',
+        stagger: 0.1
+    })
+}
+landingPageEntranceAnim()
+// /LANDING PAGE
+
+// VIDEO PAGE
+const videoPage = gsap.timeline({
+    paused: "true"
+});
+
+videoPage.to("#video-page", {
+    duration: 0.75,
+    y: 0,
+    ease: Power4.inOut,
+    zIndex: 3,
+})
+videoPage.to("#video-wrapper, #video, .credit", {
+    duration: 0.8,
+    y: 0,
+    ease: Power4.inOut,
+    zIndex: 3,
+    stagger: 0.2,
+})
+
+function toggleVideoOpen() {
+    videoPage.play();
+}
+
+function toggleVideoClosed() {
+    videoPage.reverse();
+}
+// /VIDEO PAGE
+
+// FAQ
+const faqPage = gsap.timeline({
+    paused: "true"
+})
+faqPage.to('#faq-page', {
+    duration: 0.1,
+    scrollTo: "#faq-top",
+})
+faqPage.to('#faq-page', {
+    duration: 1,
+    y: 0,
+    ease: 'power4.inOut',
+    zIndex: 2,
+})
+faqPage.to('#faq-page .line', {
+    duration: 0.75,
+    x: 0,
+    y: 0,
+    ease: 'power4.inOut',
+    stagger: 0.1,
+})
+faqPage.to('#faq-page h2, #faq-page p', {
+    duration: 0.75,
+    y: 0,
+    ease: 'power4.inOut',
+    stagger: 0.1,
+})
+faqPage.to('#faq-page .link-wrapper, #faq-page .link-light', {
+    duration: 0.5,
+    y: 0,
+    ease: 'power4.inOut',
+    stagger: 0.1
+})
+
+function toggleFaqOpen() {
+    faqPage.play();
+}
+
+function toggleFaqClosed() {
+    faqPage.reverse()
+}
+// /FAQ
+
+// NFT
+var player = new Vimeo.Player(document.querySelector('iframe'));
+
+document.getElementById('play-vid').addEventListener('click', function() {
+  player.play();
+});
+document.getElementById('close-button').addEventListener('click', function() {
+  player.pause();
+});
+// /NFT
+
+    </script>
+
+</body>
+
